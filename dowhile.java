@@ -9,4 +9,6 @@ public class dowhile {
         } while (!input.equals("quit"));
     }
     //do while always executes at least once
+    //break statement cuts the loop short
+    //continue statement moves control back to the beginning of the loop
 }
