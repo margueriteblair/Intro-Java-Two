@@ -3,6 +3,7 @@ public class strings {
         String message = "Hello world" + "!!";
         System.out.println(message.endsWith("!!"));
         System.out.println(message.length());
+        message = message.replace("!!","??");
         System.out.println(message);
     }
 }
