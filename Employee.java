@@ -1,32 +1,31 @@
+package com.codewithmosh;
+
 public class Employee {
     private int baseSalary;
     private int hourlyRate;
 
-    public void setBaseSalary(final int baseSalary) {
-        if (baseSalary <= 0) {
-            throw new IllegalArgumentException("salary cannot be 0 or less");
-            this.baseSalary = baseSalary;
-        }
+    public static int numberOfEmployees; //static means that it belongs to a class as opposed to instance
 
-        public int getBaseSalary() {
-            return baseSalary;
-        }
-
-        public int getHourlyRate(){
-            return hourlyRate;
-        }
-
-        public void setHourlyRate(final int hourlyRate) {
-            if (hourlyRate <= 0) {
-                throw new IllegalArgumentException("Hourly rate cannot be less than 0.");
-            }
-            this.hourlyRate = hourlyRate;
-        }
-
+    public Employee(int baseSalary) {
+        this(baseSalary, 0);
 
     }
 
-    public int calculateWage(final int extraHours) {
-        return baseSalary + (hourlyRate * extraHours);
+    public Employee(int baseSalary, int hourlyRate) {
+        setBaseSalary(baseSalary);
+        setHourlyRate(hourlyRate);
+        numberOfEmployees++;
+    }
+
+    public static void printNumberOfEmployees() {
+        System.out.println(numberOfEmployees);
+    }
+
+    public int calculateWage(int extraHours) {
+        return baseSalary + (getHourlyRate() * extraHours);
+    }
+    public int calculateWage() {
+        return calculateWage(0); //this is method overloading
     }
 }
+
