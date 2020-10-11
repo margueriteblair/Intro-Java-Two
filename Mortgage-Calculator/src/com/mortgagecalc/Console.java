@@ -21,7 +21,7 @@ public class Console {
             if (value >= min && value <= max) {
                 break;
             }
-            System.out.println("Enter a value between" + min + "and" + max);
+            System.out.println("Enter a value between " + min + "and " + max);
         }
         return value;
     }
