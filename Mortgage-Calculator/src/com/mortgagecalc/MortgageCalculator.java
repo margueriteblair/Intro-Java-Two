@@ -1,3 +1,6 @@
+package com.mortgagecalc;
+
+
 public class MortgageCalculator {
     private final static byte MONTHS_IN_YEAR = 12;
     private final static byte PERCENT = 100;

@@ -1,4 +1,6 @@
+package com.mortgagecalc;
 import java.util.Scanner;
+
 //console class is specifically for reading data from the console
 //this is the only time we'll be using a scanner
 public class Console {

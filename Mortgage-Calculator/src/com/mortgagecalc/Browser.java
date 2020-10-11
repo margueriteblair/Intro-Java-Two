@@ -1,3 +1,5 @@
+package com.mortgagecalc;
+
 public class Browser {
     public static void main(String[] args) {
         int x = 3;

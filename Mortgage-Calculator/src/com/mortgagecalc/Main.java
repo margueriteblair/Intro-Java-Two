@@ -1,3 +1,5 @@
+package com.mortgagecalc;
+
 public class Main {
     public static void main(String[] args) {
         int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
