@@ -2,13 +2,16 @@
 package com.margieproj;
 
 public class UIControl {
-    public static void main(String[] args) {
 
         private boolean isEnabled = true;
 
-        public UIControl(boolean isEnabled) {
-            this.isEnabled = isEnabled;
-            System.out.println("UI Control");
+        // public UIControl(boolean isEnabled) {
+        //     this.isEnabled = isEnabled;
+        //     System.out.println("UI Control");
+        // }
+
+        public void render() {
+            
         }
 
         public void enable() {
@@ -18,5 +21,4 @@ public class UIControl {
         public void disable() {
             isEnabled = false;
         }
-    }
 }
