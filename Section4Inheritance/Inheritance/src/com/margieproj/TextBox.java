@@ -9,6 +9,11 @@ public class TextBox extends UIControl{
         System.out.println("TextBox");
     }
 
+    @Override //we tell java that were overriding the toString method from theObject clas
+    public void toString() {
+        return text;
+    }
+
     public void setText(String text) {
         this.text = text;
     }
