@@ -1,13 +1,7 @@
 package com.inheritanceproj;
 
-public class TaxCalculator {
-    private double taxableIncome;
+public interface TaxCalculator {
+    double calculateTax(); //abstract method, only a declaration;
 
-    public TaxCalculator(double taxableIncome) {
-        this.taxableIncome = taxableIncome;
-    }
-
-    public double calculateTax() {
-        return taxableIncome * 0.3;
-    }
+    
 }
