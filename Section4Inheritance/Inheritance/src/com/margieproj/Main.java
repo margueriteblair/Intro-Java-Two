@@ -16,7 +16,7 @@ public class Main {
             //usually we'd be checking for what type each control is
             //but this can become unmanagable if there's too many types
             //this is where polymorphism comes into play
-            
+            control.render();
         }
    
     }
