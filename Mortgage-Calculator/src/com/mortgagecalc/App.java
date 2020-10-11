@@ -1,6 +1,6 @@
 package com.mortgagecalc;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
         int principal = (int) Console.readNumber("Principal: ", 1000, 1_000_000);
         float annualInterest = (float) Console.readNumber("Annual Interest Rate: ", 1, 30);
@@ -14,3 +14,4 @@ public class Main {
         
     }
 }
+
