@@ -7,7 +7,7 @@ public class App {
         video.setTitle("Margie's Birthday!");
         video.setUser(new User("margie@gmail.com"));
 
-        var processor = new VideoProcessor(new XvideoEncoder(), new SqlVideoDataBase(), new EmailService());
+        var processor = new VideoProcessor(new XVideoEncoder(), new SqlVideoDatabase(), new EmailService());
         processor.process(video);
     }
 }

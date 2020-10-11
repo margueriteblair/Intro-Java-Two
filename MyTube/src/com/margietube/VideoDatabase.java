@@ -1,5 +1,5 @@
 package com.margietube;
 
-public interface VideoDatabase {
+public interface VideoDataBase {
     void store(Video video);
 }
