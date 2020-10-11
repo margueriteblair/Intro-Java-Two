@@ -1,6 +1,6 @@
 ## Getting Started
 
-Mortgage Calculator program. 
+Mortgage Calculator program. Refactored to include more encapsulation and abstraction. As little class coupling as possible.
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
