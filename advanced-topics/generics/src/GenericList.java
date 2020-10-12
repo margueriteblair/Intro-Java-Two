@@ -1,6 +1,6 @@
 package src;
 //T represents the type of objects we want to store in our list
-public class GenericList<T extends Comparable & Cloneable> {
+public class GenericList<T> {
     private T[] items = (T[]) new Object[10];
     private int count;
 
