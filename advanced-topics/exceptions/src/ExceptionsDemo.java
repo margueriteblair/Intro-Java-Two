@@ -1,17 +1,12 @@
 package src;
 
-import java.io.IOException;
-
 public class ExceptionsDemo {
-    public static void show() throws IOException {
-        try {
+    public static void show() {
             var account = new Account();
-            account.deposit(-9);
-        }
-        catch (IOException ex) {
-            System.out.println("There is an error!");
-            ex.printStackTrace();
-            throw ex;
-        }
+            try {
+                account.withdraw(10);
+            } catch (InsufficientFundsException e) {
+                System.out.println(e.getMessage());
+            }
     }
 }
