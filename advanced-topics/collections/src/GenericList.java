@@ -1,6 +1,7 @@
 package src;
 
 import java.util.Iterator;
+import java.util.ListIterator;
 
 public class GenericList<T> implements Iterable<T> {
     private T[] items = (T[]) new Object[10];
@@ -17,5 +18,20 @@ public class GenericList<T> implements Iterable<T> {
     @Override
     public Iterator<T> iterator() {
         return null;
+    }
+    private class ListIterator implements Iterator<T> {
+        private GenericList<T> list;
+        public ListIterator(GenericList<T> list) {
+            this.list = list;
+        }
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public T next() {
+            return null;
+        }
     }
 }
