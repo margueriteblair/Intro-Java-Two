@@ -19,10 +19,13 @@ public class CreatingStreamsDemo {
             new Movie("c", 30, Genre.ACTION)
         );
 
-        var result = movies.stream()
-        .collect(Collectors.groupingBy(Movie::getGenre));
-
-        System.out.println(result);
+        var result = movies.stream().collect(Collectors.partitioningBy(
+            m -> m.getLikes() > 20,
+            Collectors.mapping(Movie::getTitle,
+            Collectors.joining(",")
+            )
+            ));
+            System.out.println(result);
     }
 
 }
