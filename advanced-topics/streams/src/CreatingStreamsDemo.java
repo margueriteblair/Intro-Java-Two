@@ -16,10 +16,10 @@ public class CreatingStreamsDemo {
             new Movie("a", 20),
             new Movie("c", 30)
         );
-        //sorted(Comparator.comparing(m -> m.getTitle()))
-        //sorted(Comparator.comparing(Movie::getTitle))
-        movies.stream().sorted((a, b) -> a.getTitle().compareTo(b.getTitle())).forEach(m -> System.out.println(m.getTitle()));
-        System.out.println("Method ref:");
-        movies.stream().sorted(Comparator.comparing(Movie::getTitle)).forEach(m -> System.out.println(m.getTitle()));
+    //getting unique values
+    movies.stream()
+    .map(Movie::getLikes)
+    .distinct()
+    .forEach(System.out::println);     
     }
 }
