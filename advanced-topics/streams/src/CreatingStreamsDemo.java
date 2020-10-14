@@ -16,12 +16,9 @@ public class CreatingStreamsDemo {
             new Movie("a", 20),
             new Movie("c", 30)
         );
-    //getting unique values
-    movies.stream()
-    .filter(m -> m.getLikes() > 10)
-    .peek(m -> System.out.println("filtered: " + m.getTitle()))
-    .map(Movie::getTitle)
-    .peek(t -> System.out.println("mapped: " + t))
-    .forEach(System.out::println);
+    var result = movies.stream()
+    .max(Comparator.comparing(Movie::getLikes))
+    .get();//allows us to find the movie with the max number of likes
+    System.out.println(result.getTitle());
     }
 }
