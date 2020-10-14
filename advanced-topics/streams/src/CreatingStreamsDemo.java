@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.jar.Attributes.Name;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CreatingStreamsDemo {
@@ -18,12 +19,12 @@ public class CreatingStreamsDemo {
             new Movie("c", 30)
         );
 
-    Optional<Integer> sum = movies.stream()
+    var result = movies.stream()
+    .filter(m -> m.getLikes() > 10)
     .map(m -> m.getLikes())
-    .reduce((a, b) -> a + b);
-    //.reduce(Integer::sum)
+    .collect(Collectors.toList());
 
-    System.out.println(sum.orElse(0));
+    System.out.println(result);
     }
 
 }
