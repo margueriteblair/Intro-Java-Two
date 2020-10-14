@@ -18,8 +18,10 @@ public class CreatingStreamsDemo {
         );
     //getting unique values
     movies.stream()
-    .map(Movie::getLikes)
-    .distinct()
-    .forEach(System.out::println);     
+    .filter(m -> m.getLikes() > 10)
+    .peek(m -> System.out.println("filtered: " + m.getTitle()))
+    .map(Movie::getTitle)
+    .peek(t -> System.out.println("mapped: " + t))
+    .forEach(System.out::println);
     }
 }
