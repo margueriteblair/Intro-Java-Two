@@ -3,13 +3,21 @@ package src;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.jar.Attributes.Name;
 import java.util.stream.Stream;
 
 public class CreatingStreamsDemo {
     public static void show() {
-        int[] numbers = {1, 2, 3};
-        Arrays.stream(numbers).forEach(n -> System.out.println(n));
-        var stream = Stream.generate(() -> Math.random());
-        stream.forEach(item -> System.out.println(item));
+        var movies = List.of(
+            new Movie("a", 10),
+            new Movie("b", 20),
+            new Movie("c", 30)
+        );
+
+        var stream2 = Stream.of(List.of(1, 2, 3), List.of(4, 5, 6));
+        stream2.flatMap(list -> list.stream()).forEach(n -> System.out.println(n));
+
+        movies.stream().map(movie -> movie.getTitle()).forEach(n -> System.out.println(n));
     }
 }
