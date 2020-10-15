@@ -1,19 +1,20 @@
 package src;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAdder;
 
 public class DownloadStatus {
-    private AtomicInteger totalBytes = new AtomicInteger();
-    private int totalFiles;
-    private volatile boolean isDone;
+    private LongAdder totalBytes = new LongAdder();
+    private LongAdder totalFiles = new LongAdder();
+    private boolean isDone;
 
 
     public int getTotalBytes() {
-        return totalBytes.get();
+        return totalBytes.intValue();
     }
 
     public void incrementTotalFiles() {
-            totalFiles++;
+            totalFiles.increment();
     }
 
     public void incrementTotalBytes() {
