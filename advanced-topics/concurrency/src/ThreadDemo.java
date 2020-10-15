@@ -1,6 +1,7 @@
 package src;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class ThreadDemo {
     public static void show() {
@@ -16,6 +17,7 @@ public class ThreadDemo {
         }
 
         for (var thread : threads) {
+            //remember, thread.join() expects InterruptedException error to be thrown, so we need a try catch block
             try {
                 thread.join();
             } catch (InterruptedException e) {
