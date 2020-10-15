@@ -9,6 +9,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.jar.Attributes.Name;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class CreatingStreamsDemo {
@@ -19,13 +20,9 @@ public class CreatingStreamsDemo {
             new Movie("c", 30, Genre.ACTION)
         );
 
-        var result = movies.stream().collect(Collectors.partitioningBy(
-            m -> m.getLikes() > 20,
-            Collectors.mapping(Movie::getTitle,
-            Collectors.joining(",")
-            )
-            ));
-            System.out.println(result);
+        IntStream.range(1, 5).forEach(System.out::println); //prints 1-4
+        IntStream.rangeClosed(1, 5).forEach(System.out::println); //prints 1-5
+
     }
 
 }
