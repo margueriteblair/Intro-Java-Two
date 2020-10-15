@@ -5,18 +5,14 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class DownloadStatus {
     private int totalBytes;
-    private Lock lock = new ReentrantLock();
 
     public int getTotalBytes() {
         return totalBytes;
     }
 
     public void incrementTotalBytes() {
-        lock.lock();
-        try {
+            synchronized() {
             totalBytes++;
-        } finally{
-            lock.unlock();
         }
         //lock and unlock method prevent other methods from using the same one
         //good practice to have the finally block to unlock the lock
