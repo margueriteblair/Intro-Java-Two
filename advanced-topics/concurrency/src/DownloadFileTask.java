@@ -5,6 +5,8 @@ public class DownloadFileTask implements Runnable {
     public DownloadFileTask(DownloadStatus status) {
 
     }
+    //part of the downoadfiletask is a download status class which we made
+    //we increment the totalbyte 10,000 times because that's how many times the for loop runs
     @Override
     public void run() {
         System.out.println("Downloading a file..." + Thread.currentThread().getName());
