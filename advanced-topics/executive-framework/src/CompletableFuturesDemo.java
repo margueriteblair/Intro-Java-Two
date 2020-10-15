@@ -7,11 +7,9 @@ import java.util.function.Supplier;
 
 public class CompletableFuturesDemo {
     public static void show() {
-        var future = CompletableFuture.supplyAsync(() -> {
-            System.out.println("Getting the current weather...");
-            throw new IllegalStateException();
-            //the exception was thrown on a different thread
-        });
+        var future = CompletableFuture.supplyAsync(() -> 20);
+        var result = future.thenApply((celsius) -> (celsius * 1.8) + 32); //this method returns a new completable future
+        //the result is returned in farenheit
         
     }
 }
