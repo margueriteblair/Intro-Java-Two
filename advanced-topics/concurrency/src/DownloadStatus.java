@@ -1,27 +1,23 @@
 package src;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class DownloadStatus {
-    private int totalBytes;
+    private AtomicInteger totalBytes = new AtomicInteger();
     private int totalFiles;
     private volatile boolean isDone;
-    private Object totalBytesLock = new Object();
-    private Object totalFilesLock = new Object();
 
 
     public int getTotalBytes() {
-        return totalBytes;
+        return totalBytes.get();
     }
 
     public void incrementTotalFiles() {
-        synchronized(totalFilesLock) {
             totalFiles++;
-        }
     }
 
     public void incrementTotalBytes() {
-            synchronized(totalBytesLock) {
-            totalBytes++;
-        }
+            totalBytes.incrementAndGet();
         //lock and unlock method prevent other methods from using the same one
         //good practice to have the finally block to unlock the lock
     }

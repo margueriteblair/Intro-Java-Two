@@ -10,6 +10,8 @@ public class ThreadDemo {
         var thread1 = new Thread(new DownloadFileTask(status));
         var thread2 = new Thread(() -> {
             while (!status.isDone()) {
+                status.wait();
+                status.notify();
             }
             System.out.println(status.getTotalBytes());
         });
