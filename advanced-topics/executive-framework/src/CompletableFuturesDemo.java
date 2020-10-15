@@ -7,16 +7,11 @@ import java.util.function.Supplier;
 
 public class CompletableFuturesDemo {
     public static void show() {
-        Supplier<Integer> task = () -> 1;
-        var future = CompletableFuture.supplyAsync(task);
-        try {
-            var result = future.get();
-            System.out.println(result);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        var future = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Getting the current weather...");
+            throw new IllegalStateException();
+            //the exception was thrown on a different thread
+        });
         
     }
 }
