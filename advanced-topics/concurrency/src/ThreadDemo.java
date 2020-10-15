@@ -7,11 +7,13 @@ public class ThreadDemo {
     public static void show() {
         //each thread has a name and an id, so we can call either name or id
 
-        var status = new DownloadStatus();
-
         List<Thread> threads = new ArrayList<>();
+        List<DownloadFileTask> tasks = new ArrayList<>();
+
         for (int i = 0; i < 10; i++) {
-            var thread = new Thread(new DownloadFileTask(status));
+            var task = new DownloadFileTask();
+            tasks.add(task); //new instance every time the for loop runs
+            var thread = new Thread(task);
             thread.start();
             threads.add(thread);
         }
@@ -24,6 +26,10 @@ public class ThreadDemo {
                 e.printStackTrace();
             }
         }
-        System.out.println(status.getTotalBytes());
+        var total = tasks.stream()
+        .map(t -> t.getStatus().getTotalBytes())
+        .reduce(Integer::sum);
+
+        System.out.println(total);
     }
 }
