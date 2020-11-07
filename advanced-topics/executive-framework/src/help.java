@@ -15,6 +15,9 @@ public class Main {
         test.add(6);
         test.add(7);
         minimumBias(test);
+
+        System.out.println(10.0/0);
+
     }
 
 
