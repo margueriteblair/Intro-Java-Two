@@ -9,4 +9,7 @@ public class App {
 
         report.setCalculator(new TaxCalculator2019());
     }
+    //coupling to an interface is far less than coupling to a class
+    //its not ideal to create big fat interfaces
+    //smaller, lightweight interfaces are ideal for loosely coupled code
 }
