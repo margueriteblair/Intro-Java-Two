@@ -13,3 +13,6 @@ public class App {
     //its not ideal to create big fat interfaces
     //smaller, lightweight interfaces are ideal for loosely coupled code
 }
+
+//interface segregation principle is the idea that we should divide big fat interfaces into smaller ones
+//we can reduce coupling with the interface segregation principle
